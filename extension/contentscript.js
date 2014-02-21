@@ -13,7 +13,9 @@ function insertLink(evt) {
     link && document.execCommand("CreateLink", false, link);
 }
 
-function extendEditorToolbar($editor) {
+function extendEditorToolbar() {
+    console.log('fdsafdsa');
+    var $editor = findActiveEditor();
     if ($editor.is('.crx-extended')) return;
 
     var $toolbar = $editor.find('.editor-toolbar').find('ul');
@@ -26,8 +28,7 @@ function extendEditorToolbar($editor) {
 
 
 $(function() {
-	$(document).on('click', '.fake-textarea', function() {
-	    var $editor = findActiveEditor();
-	    extendEditorToolbar($editor);
-	});
+	$(document).on('click', '.fake-textarea', extendEditorToolbar);
+    $(document).on('click', '.btn-new-discussion', extendEditorToolbar);
+    extendEditorToolbar();
 });
