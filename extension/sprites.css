@@ -1,0 +1,19 @@
+[class*="crx-icon-"] {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url('chrome-extension://__MSG_@@extension_id__/sprites.png');
+	background-repeat: no-repeat;
+}
+.crx-icon-link {
+	background-position: 0 0;
+	width: 16px;
+}
+.crx-icon-indent {
+	background-position: -32px 0;
+	width: 16px;
+}
+.crx-icon-outdent {
+	background-position: -64px 0;
+	width: 16px;
+}

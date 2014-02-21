@@ -3,13 +3,13 @@
 var TPLS = {
     BTN_LINK: ''
         + '<li><a tabindex="-1" unselectable="on" class="toolbar-item link"'
-        + ' href="javascript:;" title="插入链接"><span>Link</span></a></li>',
+        + ' href="javascript:;" title="插入链接"><span class="crx-icon-link"></span></a></li>',
     BTN_INDENT: ''
         + '<li><a tabindex="-1" unselectable="on" class="toolbar-item indent"'
-        + ' href="javascript:;" title="缩进"><span>缩进</span></a></li>',
+        + ' href="javascript:;" title="缩进"><span class="crx-icon-indent"></span></a></li>',
     BTN_OUTDENT: ''
         + '<li><a tabindex="-1" unselectable="on" class="toolbar-item outdent"'
-        + ' href="javascript:;" title="取消缩进"><span>取消缩进</span></a></li>',
+        + ' href="javascript:;" title="取消缩进"><span class="crx-icon-outdent"></span></a></li>',
     BTN_SEP: '<li><span class="separator"></span></li>',
 };
 
