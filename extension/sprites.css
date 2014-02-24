@@ -4,6 +4,7 @@
 	height: 16px;
 	background-image: url('chrome-extension://__MSG_@@extension_id__/sprites.png');
 	background-repeat: no-repeat;
+	vertical-align: middle;
 }
 .crx-icon-link {
 	background-position: 0 0;
