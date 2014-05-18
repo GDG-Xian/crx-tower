@@ -1,0 +1,38 @@
+body {
+  font-family: Ubuntu, "WenQuanYi Micro Hei", "文泉驿微米黑", Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-size: 16px;
+  background-image: url(../images/bg.png);
+  background-repeat: no-repeat;
+  background-size: 100px auto;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-color: #f6f7f1;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+.page {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  box-shadow: 0 0 5px rgba(0,0,0,0.3) \9;
+  width: 860px;
+  margin: 30px auto;
+  min-height: 200px;
+}
+
+.page-inner {
+  padding: 10px 40px 40px;
+}
+
+.page-inner h3 {
+  font-size: 20px;
+  line-height: 28px;
+  margin: 30px 0;
+  color: #84a099;
+}

@@ -17,7 +17,7 @@ var TPLS = {
         + '<li><a tabindex="-1" unselectable="on" class="toolbar-item hr" '
         + 'href="javascript:;" data-command="hr" title="分隔线" '
         + 'data-need-focus="true"><span class="icon-minus"></span></a></li>',
-    BTN_SEP: '<li><span class="separator"></span></li>',
+    BTN_SEP: '<li><span class="separator"></span></li>'
 };
 
 function findActiveEditor() {
@@ -60,9 +60,18 @@ function extendEditorToolbar() {
     $editor.addClass('crx-extended');
 }
 
+function fillQuickBox() {
+    getQuickBox().append('<input type="checkbox" id="crx-tower-show-events">');
+}
+
+function hideEvent() {
+    $('.event').hide();
+}
+
 $(function() {
 	$(document).on('click', '.fake-textarea', extendEditorToolbar);
     $(document).on('click', '.btn-new-discussion', extendEditorToolbar);
     $(document).on('focus', '.editor-body', extendEditorToolbar);
     extendEditorToolbar();
+    hideEvent();
 });
