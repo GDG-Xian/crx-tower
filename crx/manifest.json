@@ -12,8 +12,10 @@
 	},
 	
 	"permissions": [
-		"tabs"
+		"tabs", "storage" 
 	],
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
 
     "browser_action": {
         "default_icon": "icon48.png",
@@ -26,7 +28,7 @@
 	"content_scripts": [
 		{
 			"matches": ["https://tower.im/*"],
-			"js": ["jquery-2.1.0.min.js", "contentscript.js"],
+			"js": ["vendor/jquery-2.1.0.min.js", "contentscript.js"],
 			"css": ["sprites.css"]
 		}
 	],

@@ -14,6 +14,18 @@ body {
   -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
+.alert {
+  background-color: #FDFFCB;
+  border-color: #FFF95E;
+  /* -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.15); */
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  box-shadow: 0 0 5px rgba(0,0,0,0.3) \9;
+  width: 840px;
+  margin: 10px auto;
+  padding: 5px 10px;
+}
+
 .page {
   background-color: #ffffff;
   border-color: #ffffff;
@@ -22,7 +34,7 @@ body {
   box-shadow: 0 0 5px rgba(0,0,0,0.15);
   box-shadow: 0 0 5px rgba(0,0,0,0.3) \9;
   width: 860px;
-  margin: 30px auto;
+  margin: 30px auto 10px auto;
   min-height: 200px;
 }
 
