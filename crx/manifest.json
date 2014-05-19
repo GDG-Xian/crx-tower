@@ -28,8 +28,14 @@
 	"content_scripts": [
 		{
 			"matches": ["https://tower.im/*"],
-			"js": ["vendor/jquery-2.1.0.min.js", "contentscript.js"],
-			"css": ["sprites.css"]
+			"js": [
+			  "vendor/jquery-2.1.0.min.js",
+			  "vendor/sugar.min.js",
+			  "javascripts/application.js",
+			  "javascripts/contentscript.js"
+			],
+			"css": ["sprites.css"],
+			"run_at": "document_start"
 		}
 	],
 
