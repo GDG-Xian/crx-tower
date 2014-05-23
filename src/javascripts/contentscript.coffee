@@ -10,11 +10,27 @@ hideEvents = (flag) ->
   else
     hideEventsStyle && hideEventsStyle.remove()
 
+hideTasks = (flag) ->
+  hide = (flag == 'on')
+  $('.todo:not(.hl)').toggle(!hide)
+
 processHideEvents = (flag) ->
   hideEvents(flag) unless flag == undefined
 
-initOptions -> processHideEvents(options.hideEvents)
+processShowHighlightsOnly = (flag) ->
+  hideTasks(flag) unless flag == undefined
+
+initOptions ->
+  processHideEvents(options.hideEvents)
+  jQuery -> processShowHighlightsOnly(options.showHighlightsOnly)
+
 chrome.storage.onChanged.addListener (changes) ->
-  change = changes['hideEvents']
-  flag = change && change.newValue
-  processHideEvents(flag)
+  if 'hideEvents' in changes
+    change = changes['hideEvents']
+    flag = change && change.newValue
+    processHideEvents(flag)
+  else if 'showHighlightsOnly' in changes
+    change = changes['showHighlightsOnly']
+    flag = change && change.newValue
+    processShowHighlightsOnly(flag)
+

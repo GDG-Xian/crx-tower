@@ -1,6 +1,6 @@
 @options =
   hideEvents: 'off'
-  showHilightsOnly: 'off'
+  showHighlightsOnly: 'off'
 
 @log = ->
   message = Array.prototype.slice.call(arguments, 0)
