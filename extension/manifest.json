@@ -21,7 +21,9 @@
 		],
 
 		"js": [
+			"lib/underscore.js",
 			"lib/jquery.js",
+			"js/api.js",
 			"js/contentscript.js"
 		],
 

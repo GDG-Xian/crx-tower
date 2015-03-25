@@ -14,5 +14,7 @@ install:
 	@echo 'Copying library: jquery ...'
 	@sed '$$d' $(SRC)/jquery/dist/jquery.min.js > $(DIST)/lib/jquery.js
 	
-	@echo 'Copying library: sugarjs ...'
-	@cp $(SRC)/sugarjs/release/sugar.min.js $(DIST)/lib/sugar.js
+	@echo 'Copying library: underscore ...'
+	@sed '$$d' $(SRC)/underscore/underscore-min.js > $(DIST)/lib/underscore.js
+	
+	

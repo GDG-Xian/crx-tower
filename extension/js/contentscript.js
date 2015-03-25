@@ -25,12 +25,7 @@
       var message = Array.prototype.slice.call(arguments, 0);
       console.log.apply(console, ['[tower+]'].concat(message));
   }
-
-  function getPage(url, callback) {
-    $.get(url, function(html) {
-      callback(PATTERN.HTML_BODY.test(html) ? RegExp.$1 : '');
-    });
-  }
+  
 
   function loadTeams() {
     var $tpTeams = $('.tp-teams');
@@ -83,7 +78,10 @@
   }
 
   function initialize() {
-    setupLaunchpad();
+    api.teams(function(teams) {
+      console.log(teams);
+    });
+    // setupLaunchpad();
   }
 
   $(document).ready(initialize);
