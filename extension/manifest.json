@@ -23,7 +23,7 @@
 		"js": [
 			"lib/underscore.js",
 			"lib/jquery.js",
-			"js/api.js",
+			"js/tower_api.js",
 			"js/contentscript.js"
 		],
 

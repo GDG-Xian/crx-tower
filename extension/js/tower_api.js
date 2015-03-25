@@ -80,30 +80,32 @@
 
   // 取得团队下面的项目列表，如果缓存中没有，则从页面中取
   api.projects = function(teamId, callback) {
-    var teams = cache.getAll(/project_/);
+    var projects = _.where(cache.getAll(/project_/), { teamId: teamId });
 
-    if (teams.length > 0) {
-      callback(teams);
+    if (projects.length > 0) {
+      callback(projects);
     } else {
-      api.getPage(api.urlFor('/launchpad?skip=1'), function(html) {
-        $(html).find('.teams li:not(:last)').each(function() {
-          var $team = $(this);
-          
-          var url = $team.find('a').attr('href');
-          var name = $team.find('.name').text();
-          var id = url.replace('/teams/', '');
+      var teamUrl = api.urlFor('/teams/' + teamId + '/projects/');
+      api.getPage(teamUrl, function(html) {
+        $(html).find('.projects a.project:not(.new)').each(function() {
+          var $project = $(this);
 
-          var team = {
+          var url = $project.attr('href');
+          var name = $project.attr('title');
+          var id = url.replace('/projects/', '');
+
+          var project = {
             id: id,
             url: api.urlFor(url),
             name: name,
+            teamId: teamId,
           };
 
-          cache.set('team_' + team.id, team);
-          teams.push(team);
+          cache.set('project_' + project.id, project);
+          projects.push(project);
         });
 
-        callback(teams);
+        callback(projects);
       });
     }
   };

@@ -2,43 +2,54 @@
   display: none;
 }
 
-#tp-launchpad {
-  padding-left: 10px;
-  padding-right: 10px;
+.tp-launchpad {
+  position: absolute;
+  padding: 0 10px;
   background: #6B8B82;
   color: #ffffff;
   font-size: .8em;
+  height: 24px;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 .tp-teams {
   list-style: none;
 }
 
-.tp-teams > li {
+.tp-team {
   position: relative;
   display: inline-block;
-  margin-right: 10px;
 }
 
-.tp-teams li a {
+.tp-team a {
+  display: block;
   color: #ffffff;
-  padding: 3px 5px;
+  line-height: 24px;
+  white-space: nowrap;
+  padding: 0 10px;
+}
+
+.tp-team a:hover, .tp-team.active a {
+  background-color: #617e76;
+  color: #ffffff;
 }
 
 .tp-projects {
+  display: none;
   min-width: 150px;
   position: absolute;
   z-index: 1000;
-  background-color: #6B8B82;
+  background-color: #617e76;
   padding: 0;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
-.tp-projects a {
+.tp-team.active .tp-projects {
   display: block;
-  white-space: nowrap;
 }
 
-.tp-projects a:hover {
-  background-color: #809d95;
+.tp-project a:hover {
+  background-color: #58736b;
 }

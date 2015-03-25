@@ -16,5 +16,5 @@ install:
 	
 	@echo 'Copying library: underscore ...'
 	@sed '$$d' $(SRC)/underscore/underscore-min.js > $(DIST)/lib/underscore.js
-	
-	
+	@cat $(SRC)/underscore.string/dist/underscore.string.min.js >> $(DIST)/lib/underscore.js
+	@echo '_.mixin(s.exports());' >> $(DIST)/lib/underscore.js
