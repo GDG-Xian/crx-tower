@@ -15,15 +15,20 @@
 		"tabs", "https://tower.im/*"
 	],
 	
-	"content_scripts": [
-		{
-			"matches": ["https://tower.im/*"],
-			"js": ["jquery-2.1.0.min.js", "contentscript.js"],
-			"css": ["sprites.css"]
-		}
-	],
+	"content_scripts": [{
+		"matches": [
+			"https://tower.im/*"
+		],
 
-	"web_accessible_resources": [
-       "sprites.png"
-    ]
+		"js": [
+			"lib/underscore.js",
+			"lib/jquery.js",
+			"js/tower_api.js",
+			"js/contentscript.js"
+		],
+
+		"css": [
+			"css/contentstyle.css"
+		]
+	}]
 }
