@@ -1,0 +1,44 @@
+.tp-hide {
+  display: none;
+}
+
+#tp-launchpad {
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #6B8B82;
+  color: #ffffff;
+  font-size: .8em;
+}
+
+.tp-teams {
+  list-style: none;
+}
+
+.tp-teams > li {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.tp-teams li a {
+  color: #ffffff;
+  padding: 3px 5px;
+}
+
+.tp-projects {
+  min-width: 150px;
+  position: absolute;
+  z-index: 1000;
+  background-color: #6B8B82;
+  padding: 0;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.tp-projects a {
+  display: block;
+  white-space: nowrap;
+}
+
+.tp-projects a:hover {
+  background-color: #809d95;
+}
