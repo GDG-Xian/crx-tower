@@ -1,7 +1,12 @@
 (function() {
   var TPL = {
     LAUNCHPAD: '<div class="tp-launchpad"></div>',
-    TEAMS: '<ul class="tp-teams"></ul>',
+    TEAMS: ''
+      + '<ul class="tp-teams">'
+      + '  <li class="tp-team">'
+      + '    <a href="javascript:;" class="tp-btn-refresh" title="重读项目列表">【刷新】</a>'
+      + '  </li>'
+      + '</ul>',
     TEAM: ''
       + '<li class="tp-team" id="tp-team-%(id)s">'
       + '  <a href="%(url)s">'

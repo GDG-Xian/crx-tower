@@ -23,9 +23,13 @@
   display: inline-block;
 }
 
+.tp-team .tp-btn-refresh {
+  font-weight: bold;
+}
+
 .tp-team a {
-  display: block;
   color: #ffffff;
+  display: block;
   line-height: 24px;
   white-space: nowrap;
   padding: 0 10px;
