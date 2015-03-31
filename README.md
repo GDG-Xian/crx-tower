@@ -1,23 +1,13 @@
-Tower.im Plus
-===============
+# Tower.im Plus
 
-Tower.im 的 Chrome 增强扩展，增强其富文本编辑器的功能
+<a href="https://chrome.google.com/webstore/detail/transit/pfjipfdmbpbkcadkdpmacdcefoohagdc"><img src="https://camo.githubusercontent.com/334b4f665751356b1f4afb758f8ddde55b9c71b8/68747470733a2f2f7261772e6769746875622e636f6d2f476f6f676c654368726f6d652f6368726f6d652d6170702d73616d706c65732f6d61737465722f74727969746e6f77627574746f6e5f736d616c6c2e706e67" border="0" style="max-width:100%;"></a>
 
-目前实现了以下的扩展功能：
+https://github.com/GDG-Xian/crx-tower
 
-- 添加插入链接的功能
-- 添加缩进和取消缩进的功能
-- 为讨论的编辑器中也添加水平分豁线的功能
+在 tower.im 的顶部添加一个快速切换项目的工具条。
 
-![](screenshots/editor-1280x800.png)
+![](http://greatghoul.b0.upaiyun.com/1503/2oir_HObz30v.png)
 
-![](screenshots/doc-editor-1280x800.png)
-
-此扩展仅是暂时补完一些 Tower.im 目前不完善的功能，希望彩程能够慢慢的把
-Tower.im 做的更好，这个扩展的也将功能越来越少。
+----
 
 Tower.im - 简单，好用的团队协作工具 https://tower.im/
-
-## License
-
-本项目遵循 MIT 协议，请参阅 LICENSE 文件
