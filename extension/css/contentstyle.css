@@ -7,15 +7,19 @@
   padding: 0 10px;
   background: #6B8B82;
   color: #ffffff;
+  color: #ffffff;
   font-size: .8em;
   height: 24px;
+  line-height: 24px;
   right: 0;
   left: 0;
   top: 0;
+  padding: 0 30px;
 }
 
 .tp-teams {
   list-style: none;
+  float: left;
 }
 
 .tp-team {
@@ -23,9 +27,13 @@
   display: inline-block;
 }
 
+.tp-team .tp-btn-refresh {
+  font-weight: bold;
+}
+
 .tp-team a {
-  display: block;
   color: #ffffff;
+  display: block;
   line-height: 24px;
   white-space: nowrap;
   padding: 0 10px;

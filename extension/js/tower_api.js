@@ -15,24 +15,40 @@
       return JSON.parse(localStorage['tp_' + key]);
     },
 
+    remove: function(key) {
+      delete localStorage['tp_' + key];
+    },
+
     getAll: function(pattern) {
       var list = [],
+          pattern = pattern || '',
           regex = new RegExp('^tp_.*' + pattern + '.*$', 'i');
 
       for (var key in localStorage) {
-        key = key.replace(/^tp_/, '');
-        if (pattern.test(key)) {
+        if (regex.test(key)) {
+          key = key.replace(/^tp_/, '');
           list.push(cache.get(key));
         }
       }
 
       return list;
     },
+
+    clear: function(pattern) {
+      var pattern = pattern || '',
+          regex = new RegExp('^tp_.*' + pattern + '.*$', 'i');
+
+      for (var key in localStorage) {
+        if (regex.test(key)) {
+          key = key.replace(/^tp_/, '');
+          cache.remove(key);
+        }
+      }
+    }
   };
 
-
   // Tower API
-  var api = window.api = {};
+  var api = window.api = { cache: cache };
 
   api.urlFor = function(path, params) {
     var query = $.param(params || {}).replace(/^(.+)$/, '?$1');
@@ -43,13 +59,14 @@
   // 向指定 url 发送 get 请求，并返回 body 之间的内容
   api.getPage = function(url, callback) {
     $.get(url, function(html) {
-      callback(PAT.BODY.test(html) ? RegExp.$1 : '');
+      var match = html.match(PAT.BODY);
+      callback(match ? match[0] : html);
     });
   };
 
   // 取得团队列表，如果缓存中没有记录，则从页面中取
   api.teams = function(callback) {
-    var teams = cache.getAll(/team_/);
+    var teams = cache.getAll('team');
 
     if (teams.length > 0) {
       callback(teams);
@@ -80,7 +97,7 @@
 
   // 取得团队下面的项目列表，如果缓存中没有，则从页面中取
   api.projects = function(teamId, callback) {
-    var projects = _.where(cache.getAll(/project_/), { teamId: teamId });
+    var projects = _.where(cache.getAll('project'), { teamId: teamId });
 
     if (projects.length > 0) {
       callback(projects);
