@@ -57,7 +57,7 @@
   function initialize() {
     setupLaunchpad();
 
-    $(document).on('mouseover', '.tp-team', function() {
+    $(document).on('mouseenter', '.tp-team', function() {
       $('.tp-team.active').removeClass('active');
       $(this).addClass('active');
       loadProjects($(this));
