@@ -1,9 +1,9 @@
 {
 	"manifest_version": 2,
 	
-	"name": "Twoer.im Plus",
-	"description": "Improve twoer.im",
-	"version": "1.1.1",
+	"name": "Tower.im Plus",
+	"description": "Improve tower.im",
+	"version": "1.1.2",
 	
 	"icons": {
 		"48": "icon48.png",
