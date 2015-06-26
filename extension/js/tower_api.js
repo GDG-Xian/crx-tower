@@ -72,7 +72,7 @@
       callback(teams);
     } else {
       api.getPage(api.urlFor('/launchpad?skip=1'), function(html) {
-        $(html).find('.teams li:not(:last)').each(function() {
+        $(html).find('.teams li:not(.new,.team-join-request)').each(function() {
           var $team = $(this);
           
           var url = $team.find('a').attr('href');
