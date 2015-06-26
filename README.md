@@ -10,4 +10,6 @@ https://github.com/GDG-Xian/crx-tower
 
 ----
 
-Tower.im - 简单，好用的团队协作工具 https://tower.im/
+ * [更新记录](CHANGELOG.md)
+ * [反馈问题](https://github.com/GDG-Xian/crx-tower/issues)
+ * [Tower.im](https://tower.im/) - 简单，好用的团队协作工具
