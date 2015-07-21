@@ -108,7 +108,7 @@
           var $project = $(this);
 
           var url = $project.attr('href');
-          var name = $project.attr('title');
+          var name = $project.find('span.name').text();
           var id = url.replace('/projects/', '');
 
           var project = {
