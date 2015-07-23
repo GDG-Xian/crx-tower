@@ -28,7 +28,11 @@ function setupLaunchpad() {
 function loadProjects($team) {
   api.projects($team.data('id'), function(projects) {
     var html = projects.map(function(project) {
-      return tpl.project.assign(project);
+      if (api.isProjectHidden(project.id)) {
+        return '';
+      } else {
+        return tpl.project.assign(project);
+      }
     }).join('');
 
     $team.find('.tp-projects').html(html);

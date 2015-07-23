@@ -140,4 +140,12 @@ api.isTeamHidden = function(teamId) {
   return api.hiddenTeams().findIndex(teamId) != -1;
 };
 
+api.hiddenProjects = function() {
+  return cache.get('hidden_projects', []);
+};
+
+api.isProjectHidden = function(projectId) {
+  return api.hiddenProjects().findIndex(projectId) != -1;
+};
+
 module.exports = api;
