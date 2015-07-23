@@ -1,0 +1,24 @@
+{
+  "staticFiles": [
+    "src/manifest.json",
+    "src/*.html",
+    "src/img/**/*"
+  ],
+  
+  "scripts": [
+    "src/js/*.js"
+  ],
+
+  "allScripts": [
+    "Gulpfile.js",
+    "src/js/**/*"
+  ],
+
+  "styles": [
+    "src/css/*.scss"
+  ],
+
+  "allStyles": [
+    "src/css/**/*"
+  ]
+}
