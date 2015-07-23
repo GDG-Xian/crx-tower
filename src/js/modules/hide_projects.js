@@ -48,7 +48,6 @@ function toggleProject(event) {
   } else {
     hiddenProjects.remove(projectId);
   }
-  log("Hidden projects:", hiddenProjects);
   api.cache.set('hidden_projects', hiddenProjects);
 
   applyToggle($project, hidden);
