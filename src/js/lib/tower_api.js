@@ -11,8 +11,13 @@ var cache = {
     localStorage['tp_' + key] = JSON.stringify(value);
   },
 
-  get: function(key) {
-    return JSON.parse(localStorage['tp_' + key]);
+  get: function(key, defaultValue) {
+    var value = localStorage['tp_' + key];
+    if (value === undefined) {
+      return defaultValue;
+    } else {
+      return JSON.parse(value);
+    }
   },
 
   remove: function(key) {
@@ -22,7 +27,7 @@ var cache = {
   getAll: function(pattern) {
     var list = [];
     var pat  = pattern || '';
-    var regex = new RegExp('^tp_.*' + pat + '.*$', 'i');
+    var regex = new RegExp('^tp_' + pat + '.*$', 'i');
 
     for (var key in localStorage) {
       if (regex.test(key)) {
@@ -36,7 +41,7 @@ var cache = {
 
   clear: function(pattern) {
     var pat = pattern || '';
-    var regex = new RegExp('^tp_.*' + pat + '.*$', 'i');
+    var regex = new RegExp('^tp_' + pat + '.*$', 'i');
 
     for (var key in localStorage) {
       if (regex.test(key)) {
@@ -125,6 +130,14 @@ api.projects = function(teamId, callback) {
       callback(projects);
     });
   }
+};
+
+api.hiddenTeams = function() {
+  return cache.get('hidden_teams', []);
+};
+
+api.isTeamHidden = function(teamId) {
+  return api.hiddenTeams().findIndex(teamId) != -1;
 };
 
 module.exports = api;
