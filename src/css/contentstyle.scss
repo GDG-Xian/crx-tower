@@ -2,6 +2,9 @@
   display: none;
 }
 
+
+/** Launchpad  */
+
 .tp-launchpad {
   padding: 0 10px;
   background: #6B8B82;
@@ -55,4 +58,16 @@
 
 .tp-project a:hover {
   background-color: #58736b;
+}
+
+/** Event Toggle */
+
+.event {
+  display: none;
+}
+
+.tp-fold-event {
+  color: rgb(136, 136, 119);
+  font-size: 0.8em;
+  margin-left: 70px;
 }

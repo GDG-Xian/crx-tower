@@ -1,4 +1,6 @@
 *.zip
 /package
-/extension/lib
+/build
 /bower_components
+/node_modules
+/src/js/lib/template.json
