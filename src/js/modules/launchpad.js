@@ -10,10 +10,11 @@ function setupLaunchpad() {
   $launchpad.append(tpl.loading);
   
   api.teams(function(teams) {
-
     var $teams = $(tpl.teams).appendTo($launchpad);
 
     teams.each(function(team) {
+      if (team.hide) return;
+
       var $team = $(tpl.team.assign(team)).appendTo($teams);
     });
 

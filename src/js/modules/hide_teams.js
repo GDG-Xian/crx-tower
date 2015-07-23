@@ -32,11 +32,11 @@ function toggleTeam(event) {
 
   var $team = $(this).parents('a');
   var teamId = getTeamId($team);
-  var team = api.get('team_' + teamId);
+  var team = api.cache.get('team_' + teamId);
 
   // Toogle team and save
   team.hide = !team.hide;
-  api.set('team_' + teamId, team);
+  api.cache.set('team_' + teamId, team);
 
   applyToggle($team, team.hide);
 }
@@ -56,7 +56,7 @@ function initialize() {
   $('.teams a[href^="/teams/"]').each(function() {
     var $team = $(this);
     var teamId = getTeamId($team);
-    var team = api.get('team_' + teamId);
+    var team = api.cache.get('team_' + teamId);
 
     applyToggle($team, team.hide);
   });

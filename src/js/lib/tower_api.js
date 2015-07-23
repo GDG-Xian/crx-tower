@@ -50,9 +50,6 @@ var cache = {
 // Tower API
 var api = { cache: cache };
 
-api.get = cache.get;
-api.set = cache.set;
-
 api.urlFor = function(path, params) {
   var query = $.param(params || {}).replace(/^(.+)$/, '?$1');
 
