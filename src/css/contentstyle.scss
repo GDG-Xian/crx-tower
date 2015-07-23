@@ -2,6 +2,10 @@
   display: none;
 }
 
+.tp-text-center {
+  text-align: center;
+}
+
 
 /** Launchpad  */
 
@@ -70,4 +74,25 @@
   color: rgb(136, 136, 119);
   font-size: 0.8em;
   margin-left: 70px;
+}
+
+/** Team Toggle */
+#page-launchpad {
+  .tp-wrapper {
+    color: #666;
+  }
+  
+  .teams {
+    li a .fly {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &.tp-show-hide-teams {
+      li.tp-hide {
+        display: block;
+        background-color: #F2F1F1;
+      }
+    }
+  }
 }
