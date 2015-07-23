@@ -12,7 +12,10 @@ https://github.com/GDG-Xian/crx-tower
  * 隐藏讨论中事件信息
  * 隐藏团队和项目
 
-![](http://greatghoul.b0.upaiyun.com/1503/2oir_HObz30v.png)
+![](http://greatghoul.b0.upaiyun.com/1507/RPie0sP9Xh7HP.png)
+![](http://greatghoul.b0.upaiyun.com/1507/TPmn0g0Sb-3Lh.png)
+![](http://greatghoul.b0.upaiyun.com/1507/Q-moqnixLPtX-.png)
+![](http://greatghoul.b0.upaiyun.com/1507/fDU5wqqMqnegx.png)
 
 ## 资源：
 
