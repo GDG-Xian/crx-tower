@@ -4,16 +4,20 @@ var tpl = require('../lib/template');
 var log = require('../lib/log');
 
 function setupLaunchpad() {
+  var hiddenTeams = api.hiddenTeams();
+
   $('.tp-launchpad').remove();
 
   var $launchpad = $(tpl.launchpad).prependTo('body');
   $launchpad.append(tpl.loading);
-  
+
   api.teams(function(teams) {
     var $teams = $(tpl.teams).appendTo($launchpad);
 
     teams.each(function(team) {
-      var $team = $(tpl.team.assign(team)).appendTo($teams);
+      if (!api.isTeamHidden(team.id)) {
+        $(tpl.team.assign(team)).appendTo($teams);
+      }
     });
 
     $('.tp-teams').removeClass('tp-hide');

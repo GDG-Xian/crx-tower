@@ -27,7 +27,7 @@ var cache = {
   getAll: function(pattern) {
     var list = [];
     var pat  = pattern || '';
-    var regex = new RegExp('^tp_.*' + pat + '.*$', 'i');
+    var regex = new RegExp('^tp_' + pat + '.*$', 'i');
 
     for (var key in localStorage) {
       if (regex.test(key)) {
@@ -41,7 +41,7 @@ var cache = {
 
   clear: function(pattern) {
     var pat = pattern || '';
-    var regex = new RegExp('^tp_.*' + pat + '.*$', 'i');
+    var regex = new RegExp('^tp_' + pat + '.*$', 'i');
 
     for (var key in localStorage) {
       if (regex.test(key)) {
@@ -134,6 +134,10 @@ api.projects = function(teamId, callback) {
 
 api.hiddenTeams = function() {
   return cache.get('hidden_teams', []);
+};
+
+api.isTeamHidden = function(teamId) {
+  return api.hiddenTeams().findIndex(teamId) != -1;
 };
 
 module.exports = api;

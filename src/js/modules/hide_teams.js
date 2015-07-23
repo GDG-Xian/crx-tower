@@ -26,6 +26,13 @@ function applyToggle($team, hidden) {
   $team.parent().toggleClass('tp-hide', !!hidden);
 }
 
+function refreshLaunchpad() {
+  var launchpadRefresh = $('.tp-launchpad .tp-btn-refresh').get(0);
+  if (launchpadRefresh) {
+    launchpadRefresh.click();
+  }
+}
+
 function toggleTeam(event) {
   event.preventDefault();
   event.stopImmediatePropagation();
@@ -44,6 +51,7 @@ function toggleTeam(event) {
   api.cache.set('hidden_teams', hiddenTeams);
 
   applyToggle($team, hidden);
+  refreshLaunchpad();
 }
 
 function toggleHideTeams() {
