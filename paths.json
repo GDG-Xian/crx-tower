@@ -4,6 +4,10 @@
     "src/*.html",
     "src/img/**/*"
   ],
+
+  "tpls": [
+    "src/tpl/**/*"
+  ],
   
   "scripts": [
     "src/js/*.js"
