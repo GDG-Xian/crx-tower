@@ -12,7 +12,6 @@ function setupToggle() {
   $(this).before(tpl.eventToggle);
 }
 
-
 function toggleEvents() {
   var $toggle = $(this);
   var active = $toggle.is('.active');
