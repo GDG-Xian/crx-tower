@@ -56,7 +56,7 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('build/css/'));
 });
 
-gulp.task('build', ['scripts', 'styles', 'copy']);
+gulp.task('build', ['tpls', 'scripts', 'styles', 'copy']);
 
 gulp.task('watch', ['dev', 'build'], function() {
   gulp.watch(paths.tpls,        ['tpls']);

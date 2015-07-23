@@ -23,7 +23,7 @@ function applyToggle($team, hidden) {
   var text = hidden ? '显示' : '隐藏';
   $team.find('.fly').html(text);
 
-  $team.parent().toggleClass('tp-hide', !!hidden);
+  $team.parent().toggleClass('tp-hide', hidden);
 }
 
 function refreshLaunchpad() {
@@ -39,7 +39,7 @@ function toggleTeam(event) {
 
   var $team = $(this).parents('a');
   var teamId = getTeamId($team);
-  var hidden = !isTeamHidden(teamId);
+  var hidden = !api.isTeamHidden(teamId);
 
   // Toogle team hide
   var hiddenTeams = api.hiddenTeams();
@@ -59,10 +59,6 @@ function toggleHideTeams() {
   $('.teams').toggleClass('tp-show-hide-teams', showHideTeams);
 }
 
-function isTeamHidden(teamId) {
-  return api.hiddenTeams().findIndex(teamId) != -1;
-}
-
 function initialize() {
   if (!inLaunchPadPage()) return;
 
@@ -73,7 +69,7 @@ function initialize() {
   $('.teams a[href^="/teams/"]').each(function() {
     var $team = $(this);
     var teamId = getTeamId($team);
-    var hidden = isTeamHidden(teamId);
+    var hidden = api.isTeamHidden(teamId);
 
     applyToggle($team, hidden);
   });
