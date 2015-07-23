@@ -59,7 +59,7 @@ gulp.task('styles', function() {
 gulp.task('build', ['scripts', 'styles', 'copy']);
 
 gulp.task('watch', ['dev', 'build'], function() {
-  gulp.watch(paths.tpls,        ['tpl']);
+  gulp.watch(paths.tpls,        ['tpls']);
   gulp.watch(paths.staticFiles, ['copy']);
   gulp.watch(paths.allScripts,  ['jshint', 'scripts']);
   gulp.watch(paths.allStyles,   ['styles']);
