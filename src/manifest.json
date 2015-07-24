@@ -27,5 +27,9 @@
 		"css": [
 			"css/contentstyle.css"
 		]
-	}]
+	}],
+
+	"web_accessible_resources": [
+		"js/bridge.js"
+	]
 }

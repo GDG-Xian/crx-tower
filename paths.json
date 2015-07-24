@@ -2,7 +2,8 @@
   "staticFiles": [
     "src/manifest.json",
     "src/*.html",
-    "src/img/**/*"
+    "src/img/**/*",
+    "src/js/bridge.js"
   ],
 
   "tpls": [
@@ -10,6 +11,7 @@
   ],
   
   "scripts": [
+    "!src/js/bridge.js",
     "src/js/*.js"
   ],
 

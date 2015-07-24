@@ -24,9 +24,9 @@ function toggleEvents() {
   var $nextEvent = $toggle.next();
   while ($nextEvent.is('.event')) {
     if (active) {
-      $nextEvent.slideUp();
+      $nextEvent.slideUp('fast');
     } else {
-      $nextEvent.slideDown();
+      $nextEvent.slideDown('fast');
     }
 
     $nextEvent = $nextEvent.next();
@@ -37,6 +37,7 @@ function initialize() {
   var $headEvents = headEvents();
   $headEvents.each(setupToggle);
 
+  $(document).off('click', '.tp-fold-event', toggleEvents);
   $(document).on('click', '.tp-fold-event', toggleEvents);
 }
 

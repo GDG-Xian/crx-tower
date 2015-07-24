@@ -43,7 +43,7 @@ gulp.task('tpls', function() {
 });
 
 gulp.task('scripts', ['tpls'], function() {
-  gulp.src('src/js/*.js')
+  gulp.src(paths.scripts)
     .pipe(browserify({ debug: !production }))
     .pipe(gulpif(production, uglify({ mangle: false })))
     .pipe(gulp.dest('build/js/'));
