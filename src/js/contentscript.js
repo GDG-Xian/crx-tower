@@ -5,9 +5,32 @@ var eventToggle  = require('./modules/event_toggle');
 var hideTeams    = require('./modules/hide_teams');
 var hideProjects = require('./modules/hide_projects');
 
+function injectScript(url) {
+  var $script = $('<script type="text/javascript"></script>');
+  $script.attr('src', url).appendTo('head');
+}
+
+function setupEventBridge() {
+  injectScript(chrome.extension.getURL('js/bridge.js'));
+
+  window.addEventListener("message", function(event) {
+    if (event.source != window) return;
+
+    $(document).trigger(event.data.type);
+    $(document).trigger('pjaxload');
+  }, false);
+}
+
 $(document).ready(function() {
+  setupEventBridge();
+
   launchpad();
   eventToggle();
   hideTeams();
-  hideProjects();
+  
+  $(document).on('pjaxload', function() {
+    hideTeams();
+    hideProjects();
+    eventToggle();
+  });
 });
