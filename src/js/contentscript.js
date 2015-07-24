@@ -25,9 +25,11 @@ $(document).ready(function() {
   setupEventBridge();
 
   launchpad();
-  eventToggle();
-  hideTeams();
   
+  hideTeams();
+  hideProjects();
+  eventToggle();
+
   $(document).on('pjaxload', function() {
     hideTeams();
     hideProjects();
