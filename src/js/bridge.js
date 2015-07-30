@@ -11,4 +11,4 @@ $(document).on(events, function(event) {
   window.postMessage({ type: event.type }, '*');
 });
   
-console.log('[tower+] Event bride installed.')
+console.log('[tower+] Event bride installed.');
