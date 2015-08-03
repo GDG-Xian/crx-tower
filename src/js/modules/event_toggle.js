@@ -3,7 +3,7 @@ var log = require('../lib/log');
 var tpl = require('../lib/template');
 
 function headEvents() {
-  return $('.event').filter(function() {
+  return $('.comments.streams .event').filter(function() {
     return !$(this).prev().is('.event');
   });
 }
