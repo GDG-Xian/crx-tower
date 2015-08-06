@@ -27,6 +27,8 @@ function applyToggle($project, hidden) {
 }
 
 function refreshLaunchpad() {
+  if (!api.moduleEnabled('launchpad')) return;
+  
   var launchpadRefresh = $('.tp-launchpad .tp-btn-refresh').get(0);
   if (launchpadRefresh) {
     launchpadRefresh.click();
@@ -64,6 +66,7 @@ function isTeamHidden(teamId) {
 }
 
 function initialize() {
+  if (!api.moduleEnabled('hide_projects')) return;
   if (!inTeamProjectsPage()) return;
 
   $('.tools').prepend(tpl.projectsToggle);

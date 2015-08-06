@@ -1,6 +1,7 @@
 var $ = require('jquery');
 var log = require('../lib/log');
 var tpl = require('../lib/template');
+var api = require('../lib/tower_api');
 
 function headEvents() {
   return $('.event').filter(function() {
@@ -34,6 +35,10 @@ function toggleEvents() {
 }
 
 function initialize() {
+  if (!api.moduleEnabled('event_toggle')) return;
+
+  $('.event').hide();
+
   var $headEvents = headEvents();
   $headEvents.each(setupToggle);
 

@@ -157,4 +157,9 @@ api.enabledModules = function() {
   return cache.get('enabled_modules', DEFAULT_MODULES);
 };
 
+api.moduleEnabled = function(module) {
+  var modules = api.enabledModules();
+  return modules.findIndex(module) != -1;
+};
+
 module.exports = api;

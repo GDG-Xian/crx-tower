@@ -40,6 +40,7 @@ function loadProjects($team) {
 }
 
 function initialize() {
+  if (!api.moduleEnabled('launchpad')) return;
   setupLaunchpad();
 
   $(document).on('mouseenter', '.tp-team', function() {
