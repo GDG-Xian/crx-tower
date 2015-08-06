@@ -42,7 +42,7 @@ gulp.task('tpls', function() {
       .pipe(gulp.dest('src/js/lib/'));
 });
 
-gulp.task('scripts', ['tpls'], function() {
+gulp.task('scripts', function() {
   gulp.src(paths.scripts)
     .pipe(browserify({ debug: !production }))
     .pipe(gulpif(production, uglify({ mangle: false })))

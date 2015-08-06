@@ -5,6 +5,11 @@ var PAT = {
   BODY: /(<body[\s\S]*<\/body>)/img,
 };
 
+var DEFAULT_MODULES = [
+  'launchpad', 'event_toggle',
+  'hide_teams', 'hide_projects'
+];
+
 // Chrome LocalStorage Utilities
 var cache = {
   set: function(key, value) {
@@ -146,6 +151,15 @@ api.hiddenProjects = function() {
 
 api.isProjectHidden = function(projectId) {
   return api.hiddenProjects().findIndex(projectId) != -1;
+};
+
+api.enabledModules = function() {
+  return cache.get('enabled_modules', DEFAULT_MODULES);
+};
+
+api.moduleEnabled = function(module) {
+  var modules = api.enabledModules();
+  return modules.findIndex(module) != -1;
 };
 
 module.exports = api;

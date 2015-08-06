@@ -27,6 +27,8 @@ function applyToggle($team, hidden) {
 }
 
 function refreshLaunchpad() {
+  if (!api.moduleEnabled('launchpad')) return;
+  
   var launchpadRefresh = $('.tp-launchpad .tp-btn-refresh').get(0);
   if (launchpadRefresh) {
     launchpadRefresh.click();
@@ -60,6 +62,7 @@ function toggleHideTeams() {
 }
 
 function initialize() {
+  if (!api.moduleEnabled('hide_teams')) return;
   if (!inLaunchPadPage()) return;
 
   $('.teams').before(tpl.teamsToggle);
