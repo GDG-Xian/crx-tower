@@ -165,12 +165,32 @@
 /** Settings */
 .simple-dialog {
   &.fp-dialog-settings {
-    // position: absolute;
     box-sizing: border-box;
     width: 600px;
-    height: 400px;
     left: 50%;
     top: 50%;
     margin: -200px 0 0 -300px;
+
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 20px;
+      color: #84a099;
+    }
+
+    .form {
+      .form-item {
+        margin-bottom: 20px;
+
+        p.desc {
+          margin-bottom: 10px;
+        }
+      }
+
+      .form-buttons {
+        margin-top: 0px;
+      }
+    }
+    
   }
 }
