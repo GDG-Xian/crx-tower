@@ -5,6 +5,7 @@ var launchpad    = require('./modules/launchpad');
 var eventToggle  = require('./modules/event_toggle');
 var hideTeams    = require('./modules/hide_teams');
 var hideProjects = require('./modules/hide_projects');
+var commentLink = require('./modules/comment_link');
 
 function injectScript(url) {
   var $script = $('<script type="text/javascript"></script>');
@@ -30,10 +31,12 @@ $(document).ready(function() {
   hideTeams();
   hideProjects();
   eventToggle();
+  commentLink();
 
   $(document).on('pjaxload', function() {
     hideTeams();
     hideProjects();
     eventToggle();
+    commentLink();
   });
 });

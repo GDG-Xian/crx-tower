@@ -7,7 +7,8 @@ var PAT = {
 
 var DEFAULT_MODULES = [
   'launchpad', 'event_toggle',
-  'hide_teams', 'hide_projects'
+  'hide_teams', 'hide_projects',
+  'comment_link'
 ];
 
 // Chrome LocalStorage Utilities
