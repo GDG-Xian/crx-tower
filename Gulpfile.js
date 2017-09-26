@@ -1,15 +1,11 @@
-/**
- * jshint strict:true
- */
-
 var gulp        = require('gulp');
 var gulpif      = require('gulp-if');
 var watch       = require('gulp-watch');
 var clean       = require('gulp-clean');
 var sass        = require('gulp-sass');
 var minifycss   = require('gulp-minify-css');
-var jshint      = require('gulp-jshint');
 var uglify      = require('gulp-uglify');
+var standard    = require('gulp-standard')
 var zip         = require('gulp-zip');
 var browserify  = require('gulp-browserify');
 var filesToJson = require('gulp-files-to-json');
@@ -30,10 +26,10 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('build/'));
 });
 
-gulp.task('jshint', function() {
+gulp.task('standard', function() {
   return gulp.src(paths.allScripts)
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+    .pipe(standard())
+    .pipe(standard.reporter('default', { breakOnError: false, quiet: false }))
 });
 
 gulp.task('tpls', function() {
@@ -61,7 +57,7 @@ gulp.task('build', ['tpls', 'scripts', 'styles', 'copy']);
 gulp.task('watch', ['dev', 'build'], function() {
   gulp.watch(paths.tpls,        ['tpls']);
   gulp.watch(paths.staticFiles, ['copy']);
-  gulp.watch(paths.allScripts,  ['jshint', 'scripts']);
+  gulp.watch(paths.allScripts,  ['standard', 'scripts']);
   gulp.watch(paths.allStyles,   ['styles']);
 });
 
