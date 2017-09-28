@@ -3,6 +3,7 @@
  */
 
 var $ = require('jquery')
+var _ = require('lodash')
 var tpl = require('../lib/template')
 var api = require('../lib/tower_api')
 
@@ -47,7 +48,7 @@ function toggleTeam (event) {
   if (hidden) {
     hiddenTeams.push(teamId)
   } else {
-    hiddenTeams.remove(teamId)
+    _.pull(hiddenTeams, teamId)
   }
   api.cache.set('hidden_teams', hiddenTeams)
 

@@ -102,7 +102,7 @@ api.teams = function (callback) {
 
 // 取得团队下面的项目列表，如果缓存中没有，则从页面中取
 api.projects = function (teamId, callback) {
-  var projects = cache.getAll('project').filter({ teamId: teamId })
+  var projects = _.filter(cache.getAll('project'), { teamId: teamId })
 
   if (projects.length > 0) {
     callback(projects)
@@ -131,7 +131,7 @@ api.hiddenTeams = function () {
 }
 
 api.isTeamHidden = function (teamId) {
-  return api.hiddenTeams().findIndex(teamId) !== -1
+  return _.indexOf(api.hiddenTeams(), teamId) !== -1
 }
 
 api.hiddenProjects = function () {
@@ -139,7 +139,7 @@ api.hiddenProjects = function () {
 }
 
 api.isProjectHidden = function (projectId) {
-  return api.hiddenProjects().findIndex(projectId) !== -1
+  return _.indexOf(api.hiddenProjects(), projectId) !== -1
 }
 
 api.enabledModules = function () {
@@ -148,7 +148,7 @@ api.enabledModules = function () {
 
 api.moduleEnabled = function (module) {
   var modules = api.enabledModules()
-  return modules.findIndex(module) !== -1
+  return _.indexOf(modules, module) !== -1
 }
 
 module.exports = api

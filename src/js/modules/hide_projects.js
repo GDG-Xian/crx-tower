@@ -3,6 +3,7 @@
  */
 
 var $ = require('jquery')
+var _ = require('lodash')
 var tpl = require('../lib/template')
 var api = require('../lib/tower_api')
 
@@ -47,7 +48,7 @@ function toggleProject (event) {
   if (hidden) {
     hiddenProjects.push(projectId)
   } else {
-    hiddenProjects.remove(projectId)
+    _.pull(hiddenProjects, projectId)
   }
   api.cache.set('hidden_projects', hiddenProjects)
 
@@ -64,7 +65,7 @@ function initialize () {
   if (!api.moduleEnabled('hide_projects')) return
   if (!inTeamProjectsPage()) return
 
-  $('.tools').prepend(tpl.projectsToggle)
+  $('.project-tools-right').prepend(tpl.projectsToggle)
 
   $('.tp-projects-toggle :checkbox').on('click', toggleHideProjects)
 

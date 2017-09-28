@@ -1,4 +1,5 @@
 var $ = require('jquery')
+var _ = require('lodash')
 var api = require('../lib/tower_api')
 var tpl = require('../lib/template')
 
@@ -11,9 +12,9 @@ function setupLaunchpad () {
   api.teams(function (teams) {
     var $teams = $(tpl.teams).appendTo($launchpad)
 
-    teams.each(function (team) {
+    teams.forEach(function (team) {
       if (!api.isTeamHidden(team.id)) {
-        $(tpl.team.assign(team)).appendTo($teams)
+        $(_.template(tpl.team)(team)).appendTo($teams)
       }
     })
 
@@ -28,7 +29,7 @@ function loadProjects ($team) {
       if (api.isProjectHidden(project.id)) {
         return ''
       } else {
-        return tpl.project.assign(project)
+        return _.template(tpl.project)(project)
       }
     }).join('')
 

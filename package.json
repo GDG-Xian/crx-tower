@@ -22,8 +22,7 @@
   },
   "dependencies": {
     "jquery": "^2.1.4",
-    "lodash": "^4.17.4",
-    "sugar": "^1.4.1"
+    "lodash": "^4.17.4"
   },
   "standard": {
     "globals": [ "chrome" ]
