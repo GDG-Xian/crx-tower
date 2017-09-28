@@ -2,7 +2,7 @@
  * 隐藏和显示团队
  */
 
-var $   = require('jquery')
+var $ = require('jquery')
 var tpl = require('../lib/template')
 var api = require('../lib/tower_api')
 
