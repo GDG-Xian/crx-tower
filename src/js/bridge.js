@@ -1,3 +1,4 @@
+/* global $ */
 // Tower im event bridge
 
 var events = [
@@ -5,10 +6,10 @@ var events = [
   'pjaxload#page-message',
   'pjaxload#page-todo',
   'pjaxload#page-doc'
-].join(' ');
+].join(' ')
 
-$(document).on(events, function(event) {
-  window.postMessage({ type: event.type }, '*');
-});
-  
-console.log('[tower+] Event bride installed.');
+$(document).on(events, function (event) {
+  window.postMessage({ type: event.type }, '*')
+})
+
+console.log('[tower+] Event bride installed.')
