@@ -3,7 +3,10 @@ var gulpif = require('gulp-if')
 var clean = require('gulp-clean')
 var sass = require('gulp-sass')
 var minifycss = require('gulp-minify-css')
-var uglify = require('gulp-uglify')
+var uglifyes = require('uglify-es')
+var composer = require('gulp-uglify/composer')
+var pump = require('pump')
+var minify = composer(uglifyes, console)
 var standard = require('gulp-standard')
 var zip = require('gulp-zip')
 var browserify = require('gulp-browserify')
@@ -37,11 +40,15 @@ gulp.task('tpls', function () {
       .pipe(gulp.dest('src/js/lib/'))
 })
 
-gulp.task('scripts', function () {
-  gulp.src(paths.scripts)
-    .pipe(browserify({ debug: !production }))
-    .pipe(gulpif(production, uglify({ mangle: false })))
-    .pipe(gulp.dest('build/js/'))
+gulp.task('scripts', function (cb) {
+  pump(
+    [
+      gulp.src(paths.scripts),
+      gulpif(production, minify({ mangle: false })),
+      gulp.dest('build/js/')
+    ],
+    cb
+  )
 })
 
 gulp.task('styles', function () {

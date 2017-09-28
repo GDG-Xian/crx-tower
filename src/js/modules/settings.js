@@ -32,7 +32,9 @@ function saveSettings (event) {
   event.preventDefault()
 
   var selector = '.fp-dialog-settings .option :checkbox:checked'
-  var modules = $(selector).toArray().map(option => option.value)
+  var modules = $(selector).toArray().map(function (option) {
+    return option.value
+  })
 
   log('Updates enabled modules to', modules)
   api.cache.set('enabled_modules', modules)

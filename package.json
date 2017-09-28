@@ -14,17 +14,21 @@
     "gulp-sass": "latest",
     "gulp-standard": "^10.1.1",
     "gulp-strip-debug": "^1.0.2",
-    "gulp-uglify": "^1.1.0",
+    "gulp-uglify": "^3.0.0",
     "gulp-zip": "^2.0.2",
     "node-sass": "latest",
+    "pump": "^1.0.2",
     "standard": "^10.0.3",
-    "templatizer": "^1.5.2"
+    "templatizer": "^1.5.2",
+    "uglify-es": "^3.1.2"
   },
   "dependencies": {
     "jquery": "^2.1.4",
     "lodash": "^4.17.4"
   },
   "standard": {
-    "globals": [ "chrome" ]
+    "globals": [
+      "chrome"
+    ]
   }
 }
