@@ -18,7 +18,7 @@ var cache = {
 
   get: function (key, defaultValue) {
     var value = window.localStorage['tp_' + key]
-    if (value === undefined) {
+    if (_.isEmpty(value)) {
       return defaultValue
     } else {
       return JSON.parse(value)
