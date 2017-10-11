@@ -1,10 +1,9 @@
 import $ from 'jquery'
 import api from '../lib/tower_api'
-
-var log = require('../lib/log')
+import log from '../lib/log'
 
 const TPL_MENU_SETTING = '<li><a href="javascript:;" class="fp-menu-setting">扩展设置</a></li>'
-const TPL_SETTINGS_DIALOG = ```
+const TPL_SETTINGS_DIALOG = `
   <div class="simple-dialog fp-dialog-settings">
     <a class="simple-dialog-remove" href="javascript:;">
       <i class="icon-cross"><span>✕</span></i>
@@ -39,7 +38,7 @@ const TPL_SETTINGS_DIALOG = ```
       </div>
     </div>
   <div>
-```
+`
 
 function setupSettingsMenu () {
   $('.popover-header-menu .part-line:first').before(TPL_MENU_SETTING)

@@ -11,7 +11,7 @@ function injectScript (url) {
 }
 
 function setupEventBridge () {
-  injectScript(chrome.extension.getURL('js/bridge.js'))
+  injectScript(chrome.extension.getURL('pages/bridge.js'))
 
   window.addEventListener('message', function (event) {
     if (event.source !== window) return

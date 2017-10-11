@@ -6,15 +6,15 @@ import $ from 'jquery'
 import _ from 'lodash'
 import api from '../lib/tower_api'
 
-const TPL_PROJECTS_TOGGLE = ```
+const TPL_PROJECTS_TOGGLE = `
   <label class="tp-projects-toggle">
     <input type="checkbox" />
     显示隐藏的项目
   </label>
-```
-const TPL_PROJECT_TOGGLE = ```
+`
+const TPL_PROJECT_TOGGLE = `
   <span class="tp-project-toggle">隐藏</span>
-```
+`
 
 function inTeamProjectsPage () {
   var url = document.location.href

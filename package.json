@@ -20,7 +20,8 @@
   "standard": {
     "globals": [
       "chrome"
-    ]
+    ],
+    "parser": "babel-eslint"
   },
   "devDependencies": {
     "babel-cli": "6.x.x",

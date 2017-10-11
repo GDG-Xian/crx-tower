@@ -1,12 +1,12 @@
 import $ from 'jquery'
 import api from '../lib/tower_api'
 
-const EVENT_TOGGLE = ```
+const EVENT_TOGGLE = `
   <a href="javascript:;" class="tp-fold-event">
     <span>显示</span>事件列表
     <i class="twr twr-angle-down"></i>
   </a>
-```
+`
 
 function headEvents () {
   return $('.comments.streams .event').filter(function () {

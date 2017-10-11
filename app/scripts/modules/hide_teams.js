@@ -6,14 +6,14 @@ import $ from 'jquery'
 import _ from 'lodash'
 import api from '../lib/tower_api'
 
-const TPL_TEAMS_TOGGLE = ```
+const TPL_TEAMS_TOGGLE = `
   <div class="tp-wrapper tp-text-center">
     <label>
       <input type="checkbox" class="tp-teams-toggle" />
       显示隐藏的团队
     </label>
   </div>
-```
+`
 
 function inLaunchPadPage () {
   var url = document.location.href

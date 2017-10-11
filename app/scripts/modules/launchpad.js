@@ -4,7 +4,7 @@ import api from '../lib/tower_api'
 
 const TPL_LAUNCHPAD = '<div class="tp-launchpad"></div>'
 const TPL_LOADING = '<span class="tp-loading">载入中...</span>'
-const TPL_TEAMS = ```
+const TPL_TEAMS = `
   <ul class="tp-teams tp-hide">
     <li class="tp-team">
       <a href="javascript:;" class="tp-btn-refresh" title="重读项目列表">
@@ -12,20 +12,20 @@ const TPL_TEAMS = ```
       </a> 
     </li>
   </ul>
-```
-const TPL_TEAM = ```
+`
+const TPL_TEAM = `
   <li class="tp-team" data-id="<%= id %>">
     <a href="<%= url %>">
       <%= name %> <span class="twr twr-caret-down"></span>
     </a>
     <ul class="tp-projects"></ul>
   </li>
-```
-const TPL_PROJECT = ```
+`
+const TPL_PROJECT = `
   <li class="tp-project" data-id="<%= id %>">
     <a href="<%= url %>"><%= name %></a>
   </li>
-```
+`
 
 function setupLaunchpad () {
   $('.tp-launchpad').remove()
