@@ -1,0 +1,128 @@
+.tp-hide {
+  display: none; }
+
+.tp-text-center {
+  text-align: center; }
+
+/** Launchpad  */
+.tp-launchpad {
+  padding: 0 10px;
+  background: #6B8B82;
+  color: #ffffff;
+  font-size: .8em;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 30px; }
+
+.tp-teams {
+  list-style: none;
+  float: left; }
+
+.tp-team {
+  position: relative;
+  display: inline-block; }
+
+.tp-team .tp-btn-refresh {
+  font-weight: bold; }
+
+.tp-team a {
+  color: #ffffff;
+  display: block;
+  line-height: 24px;
+  white-space: nowrap;
+  padding: 0 10px; }
+
+.tp-team a:hover, .tp-team.active a {
+  background-color: #617e76;
+  color: #ffffff; }
+
+.tp-projects {
+  display: none;
+  min-width: 150px;
+  position: absolute;
+  z-index: 1000;
+  background-color: #617e76;
+  padding: 0;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1); }
+
+.tp-team.active .tp-projects {
+  display: block; }
+
+.tp-project a:hover {
+  background-color: #58736b; }
+
+/** Event Toggle */
+.tp-fold-event {
+  color: #888877;
+  font-size: 0.8em;
+  margin-left: 70px; }
+
+/** Team Toggle */
+#page-launchpad .tp-wrapper {
+  color: #666; }
+
+#page-launchpad .teams li a .fly {
+  font-size: 12px;
+  line-height: 18px; }
+
+#page-launchpad .teams.tp-show-hide-teams li.tp-hide {
+  display: block;
+  background-color: #F2F1F1; }
+
+/** Project Toggle */
+#page-projects .tp-projects-toggle {
+  float: left;
+  margin: 0;
+  font-size: 14px;
+  color: #666; }
+
+#page-projects .projects a.project span.tp-project-toggle {
+  display: none;
+  font-size: 14px; }
+
+#page-projects .projects a.project.tp-hide {
+  display: none; }
+
+#page-projects .projects a.project:hover span.tp-project-toggle {
+  display: block; }
+
+#page-projects .projects.grid-view .project span.tp-project-toggle {
+  position: absolute;
+  left: 10px;
+  top: 10px; }
+
+#page-projects .projects.list-view .project span.progress em {
+  font-size: 12px !important; }
+
+#page-projects .projects.list-view .project span.tp-project-toggle {
+  float: right;
+  margin-right: 20px;
+  font-size: 12px;
+  line-height: 50px;
+  height: 50px;
+  vertical-align: baseline;
+  position: initial; }
+
+#page-projects .projects.tp-show-hide-projects a.project.tp-hide {
+  display: block; }
+  #page-projects .projects.tp-show-hide-projects a.project.tp-hide * {
+    color: #888; }
+
+/** Settings */
+.simple-dialog.fp-dialog-settings {
+  box-sizing: border-box;
+  width: 600px;
+  left: 50%;
+  top: 50%;
+  margin: -200px 0 0 -300px; }
+  .simple-dialog.fp-dialog-settings h3 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    color: #84a099; }
+  .simple-dialog.fp-dialog-settings .form .form-item {
+    margin-bottom: 20px; }
+    .simple-dialog.fp-dialog-settings .form .form-item p.desc {
+      margin-bottom: 10px; }
+  .simple-dialog.fp-dialog-settings .form .form-buttons {
+    margin-top: 0px; }

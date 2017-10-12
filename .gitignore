@@ -1,5 +1,8 @@
-*.zip
-/dist
-/build
-/node_modules
-/src/js/lib/template.json
+
+.DS_Store
+
+node_modules
+npm-debug.log
+
+dist/
+packages/
